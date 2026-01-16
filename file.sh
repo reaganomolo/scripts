@@ -3,12 +3,15 @@
 # 1. Ask for directory name
 read -p "Enter name of the new directory: " name
 
-# 2. Exit if the user didn't type anything (Safety first!)
-#if [[ -z "$name" ]]; then
- #  exit 1
-#fi
+# 2. Exit if the user didn't type anything and if the directory already exist
+
+# 3. Create and enter directory (Using quotes for safety)
+# Using quotes enables name variable to accept directory names with spacing instead\
+# Of creating multiple directories ie if the intention is to create one single directory.
+# Enclosing the "name" in quotes enables it to interpret the input as one directory name.
 
 # The above block of code could also be achieved by this single line:
+
 if [[ -z "$name" ]]; then
  echo "No name provided, aborting." >&2
  exit 1
@@ -20,12 +23,7 @@ if [[ -d "$name" ]]; then
 fi
 mkdir -p "$name"
 
-# 3. Create and enter directory (Using quotes for safety)
-# Using quotes enables name variable to accept directory names with spacing instead\
-# Of creating multiple directories ie if the intention is to create one single directory.
-# Enclosing the "name" in quotes enables it to interpret the input as one directory name.
 
-#mkdir -p "$name"
 cd "$name" || exit # if changing into the new directory fails by using ||, the program exits.
 echo "Current directory: $(pwd)"
 
