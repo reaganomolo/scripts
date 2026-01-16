@@ -12,17 +12,24 @@ read -p "Enter name of the new directory: " name
 
 # The above block of code could also be achieved by this single line:
 
-if [[ -z "$name" ]]; then
- echo "No name provided, aborting." >&2
- exit 1
+#if [[ -z "$name" ]]; then
+ #echo "No name provided, aborting." >&2
+ #exit 1
+#fi
+
+#if [[ -d "$name" ]]; then
+ #echo "$name already exists, aborting." >&2
+ #exit 1
+#fi
+
+
+if [[ -z "$name" || -d "$name" ]]; then
+    echo "No name was provided or directory $name already exists or no name provided. Exiting."
+    exit 1
 fi
 
-if [[ -d "$name" ]]; then
- echo "$name already exists, aborting." >&2
- exit 1
-fi
+
 mkdir -p "$name"
-
 
 cd "$name" || exit # if changing into the new directory fails by using ||, the program exits.
 echo "Current directory: $(pwd)"
