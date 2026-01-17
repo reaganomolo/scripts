@@ -9,6 +9,8 @@ if [ "$numb" != "1" ] && [ "$numb" != "2" ]; then
     exit 1
 fi
 
+#Sets an environmental variable to be "Yes" if it is "1", and "No" if it is "2".
+
 if [ "$numb" -eq 1 ]; then
     export MYVAR="Yes"
 else
@@ -18,5 +20,4 @@ fi
 echo "The environmental variable MYVAR is set to: $MYVAR"
 
 
-#Sets an environmental variable to be "Yes" if it is "1", and "No" if it is "2".
-#Exports the environmental variable and displays it.
+
