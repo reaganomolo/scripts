@@ -17,6 +17,7 @@ else
     export MYVAR="No"
 fi
 
+#Prints the value of the environmental variable.
 echo "The environmental variable MYVAR is set to: $MYVAR"
 
 
