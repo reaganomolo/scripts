@@ -1,6 +1,6 @@
 #!/bin/bash
 
-AGE = $1 # Get the age from the first command line argument
+AGE=$1 # Get the age from the first command line argument
 if [ -z "$AGE" ]; then
     echo "ERROR: Age cannot be empty." # Show an error if the input is empty
     exit 1
