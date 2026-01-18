@@ -41,7 +41,7 @@ fi
 
 # 3. Determine which function to call based on the letter provided
 case $OPERATION in
-    a) add $NUM1 $NUM2 ;;
+    a) add $NUM1 $NUM2 ;; # Addition
     s) subtract $NUM1 $NUM2 ;;
     m) multiply $NUM1 $NUM2 ;;
     d) divide $NUM1 $NUM2 ;;
