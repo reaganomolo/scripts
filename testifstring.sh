@@ -11,4 +11,6 @@ elif [ "$choice" == "Middle" ]; then
 elif [ "$choice" == "Aisle" ]; then
     echo "Greetings! You have selected an Aisle seat."
     echo "Your $choice is not valid, try again."
+else
+    echo "ERROR: Your $choice is not valid, try again."    
 fi
